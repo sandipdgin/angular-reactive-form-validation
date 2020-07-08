@@ -1,0 +1,7 @@
+.container {
+  min-height: 60vh;
+  color: #050505;
+}
+.container h5 {
+  font-weight: 500;
+}

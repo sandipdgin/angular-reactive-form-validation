@@ -1,0 +1,325 @@
+<div id="formContent" class="container mt-4">
+  <h4>Medline.com</h4>
+  <h3 class="mb-4">Account Registration</h3>
+
+  <h5 class="pb-1">User Information</h5>
+
+  <div class="alert alert-danger mt-4" *ngIf="showInvalidMsg" role="alert">
+    Please review errors.
+    <button
+      type="button"
+      class="close"
+      data-dismiss="alert"
+      aria-label="Close"
+      (click)="toogleErrMsg()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <h6 class="mt-4">User Information</h6>
+  <form
+    class="needs-validation mt-2 clearfix"
+    [formGroup]="regForm"
+    (ngSubmit)="submit()"
+  >
+    <div class="form-row">
+      <div class="col-md-5 mb-3">
+        <label for="firstName">FIRST NAME*</label>
+        <input
+          type="text"
+          class="form-control"
+          name="firstName"
+          id="firstName"
+          formControlName="firstName"
+          [ngClass]="{
+            'is-invalid':
+              regForm.get('firstName').errors &&
+              (regForm.get('firstName').touched ||
+                regForm.get('firstName').dirty)
+          }"
+        />
+        <div
+          *ngIf="
+            regForm.get('firstName').errors &&
+            (regForm.get('firstName').touched || regForm.get('firstName').dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            [ngClass]="{
+              'has-error':
+                regForm.get('firstName').errors &&
+                (regForm.get('firstName').touched ||
+                  regForm.get('firstName').dirty)
+            }"
+          >
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-exclamation-circle-fill"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+              />
+            </svg>
+            First Name is a required field.
+          </div>
+        </div>
+        <!-- <div
+          *ngIf="
+            regFormControl.firstName.touched && !regFormControl.firstName.valid
+          "
+        >
+          <div
+            class="invalid-feedback"
+            *ngIf="regFormControl.firstName.errors?.required"
+          >
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-exclamation-circle-fill"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+              />
+            </svg>
+            First Name is a required field.
+          </div>
+        </div> -->
+      </div>
+      <div class="col-md-5 mb-3">
+        <label for="lastName">LAST NAME*</label>
+        <input
+          type="text"
+          class="form-control"
+          name="lastName"
+          id="lastName"
+          formControlName="lastName"
+          [ngClass]="{
+            'is-invalid':
+              regForm.get('lastName').errors &&
+              (regForm.get('lastName').touched || regForm.get('lastName').dirty)
+          }"
+        />
+        <!-- <div class="valid-feedback">
+          Looks good!
+        </div> -->
+        <div
+          *ngIf="
+            regForm.get('lastName').errors &&
+            (regForm.get('lastName').touched || regForm.get('lastName').dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            [ngClass]="{
+              'has-error':
+                regForm.get('lastName').errors &&
+                (regForm.get('lastName').touched ||
+                  regForm.get('lastName').dirty)
+            }"
+            *ngIf="regFormControl.lastName.errors?.required"
+          >
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-exclamation-circle-fill"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+              />
+            </svg>
+            Last Name is a required field.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-3 mb-3">
+        <label for="phone">PHONE*</label>
+        <input
+          type="number"
+          class="form-control"
+          name="phone"
+          id="phone"
+          formControlName="phone"
+          [ngClass]="{
+            'is-invalid':
+              regForm.get('phone').errors &&
+              (regForm.get('phone').touched || regForm.get('phone').dirty)
+          }"
+        />
+        <div
+          *ngIf="
+            regForm.get('phone').errors &&
+            (regForm.get('phone').touched || regForm.get('phone').dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            [ngClass]="{
+              'has-error':
+                regForm.get('phone').errors &&
+                (regForm.get('phone').touched || regForm.get('phone').dirty)
+            }"
+            *ngIf="regFormControl.phone.errors?.required"
+          >
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-exclamation-circle-fill"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+              />
+            </svg>
+            Phone is a required field.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 mb-3">
+        <label for="ext">Ext</label>
+        <input
+          type="number"
+          class="form-control"
+          name="ext"
+          id="ext"
+          formControlName="ext"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-5 mb-3">
+        <label for="email">EMAIL*</label>
+        <input
+          type="text"
+          class="form-control"
+          name="email"
+          id="email"
+          formControlName="email"
+          [ngClass]="{
+            'is-invalid':
+              regForm.get('email').errors &&
+              (regForm.get('email').touched || regForm.get('email').dirty)
+          }"
+        />
+        <div
+          *ngIf="
+            regForm.get('email').errors &&
+            (regForm.get('email').touched || regForm.get('email').dirty)
+          "
+        >
+          <div
+            class="invalid-feedback"
+            [ngClass]="{
+              'has-error':
+                regForm.get('email').errors &&
+                (regForm.get('email').touched || regForm.get('email').dirty)
+            }"
+            *ngIf="regForm.get('email').errors?.required"
+          >
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-exclamation-circle-fill"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+              />
+            </svg>
+            Email is a required field.
+          </div>
+          <div
+            class="invalid-feedback"
+            [ngClass]="{
+              'has-error':
+                regForm.get('email').errors &&
+                (regForm.get('email').touched || regForm.get('email').dirty)
+            }"
+            *ngIf="regForm.get('email').errors?.email"
+          >
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-exclamation-circle-fill"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+              />
+            </svg>
+            Please enter valid email id.
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-success float-right" type="submit">
+      NEXT
+    </button>
+  </form>
+</div>
+
+<!-- modal -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h6 class="modal-title">User Information</h6>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+      <div class="row">
+        <p>User has been created successfully with the below details</p>
+        <div class="col-md-4 offset-md-1 mb-3 modal-label">
+          User Name:
+        </div>
+        <div class="col-md-4 mb-3">
+          {{ regForm.get("firstName").value }}
+          {{ regForm.get("lastName").value }}
+        </div>
+        <div class="col-md-4 offset-md-1 mb-3 modal-label">
+          Phone:
+        </div>
+        <div class="col-md-4 mb-3">
+          {{ regForm.get("phone").value }}
+        </div>
+        <div class="col-md-4 offset-md-1 mb-3 modal-label">
+          Email:
+        </div>
+        <div class="col-md-4 mb-3">
+          {{ regForm.get("email").value }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer justify-content-center">
+    <button type="button" class="btn btn-success" (click)="closeModal()">
+      OK
+    </button>
+    <!-- (click)="modal.close('Close click')" -->
+  </div>
+</ng-template>

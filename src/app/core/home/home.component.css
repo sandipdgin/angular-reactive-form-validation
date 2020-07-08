@@ -1,0 +1,59 @@
+#formContent {
+  padding-left: 0;
+  padding-right: 0;
+}
+#formContent h5 {
+  border-bottom: 1px solid #cccccc;
+}
+form.needs-validation {
+  padding-bottom: 2rem;
+}
+.has-error {
+  display: block;
+}
+form input {
+  border: 1px solid #d6d2c9;
+}
+.modal-content,
+.alert {
+  border-radius: 0;
+}
+form input.is-invalid {
+  background-color: #faf9f7;
+  border-color: red;
+}
+/* form-control ng-invalid is-invalid ng-dirty ng-touched */
+.ng-invalid,
+.form-control.is-invalid .has-input-error {
+  border-color: red;
+}
+.form-control {
+  border-color: #d6d2c9;
+  border-radius: 0;
+  background-color: #ffffff;
+}
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  background-image: none;
+}
+.modal-header {
+  border-bottom: none;
+}
+button:focus {
+  outline: none;
+}
+.modal-footer {
+  border-top: none;
+}
+.modal-body {
+  color: #6a6a6a;
+}
+.modal-title {
+  text-transform: none;
+  font-size: 1.2rem;
+}
+.modal-label {
+  color: #555555;
+}

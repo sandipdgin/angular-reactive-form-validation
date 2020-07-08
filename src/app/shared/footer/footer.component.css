@@ -1,0 +1,23 @@
+footer {
+  bottom: 0;
+  width: 100%;
+  /* margin-top: 2rem; */
+}
+
+footer .container {
+  border-top: 1px solid #cccccc;
+  padding-top: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+footer .container p {
+  margin-bottom: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #0057b8;
+  border-top: 1px solid #cccccc;
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-align: center;
+}
